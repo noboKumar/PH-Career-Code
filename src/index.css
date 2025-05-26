@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.active {
+  @apply bg-base-300
+    px-5 py-2 rounded-xl mx-1;
+}
