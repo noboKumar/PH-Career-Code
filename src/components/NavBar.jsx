@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLaptopCode } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 
 const NavBar = () => {
@@ -62,15 +63,20 @@ const NavBar = () => {
               {navBarLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Career Code</a>
+          <a className="btn btn-ghost text-xl">
+            <FaLaptopCode size={40} />
+            Career Code
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-[16px] space-x-10 items-center">{navBarLinks}</ul>
+          <ul className="menu menu-horizontal px-1 text-[16px] space-x-10 items-center">
+            {navBarLinks}
+          </ul>
         </div>
         <div className="navbar-end">
           <div className="space-x-5">
             <Link className="underline">Register</Link>
-            <Link className="btn btn-primary">Sign IN</Link>
+            <Link className="btn btn-primary">Sign In</Link>
           </div>
         </div>
       </div>
