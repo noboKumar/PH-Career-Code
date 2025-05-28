@@ -75,8 +75,8 @@ const NavBar = () => {
         </div>
         <div className="navbar-end">
           <div className="space-x-5">
-            <Link className="underline">Register</Link>
-            <Link className="btn btn-primary">Sign In</Link>
+            <Link className="underline" to={"/register"}>Register</Link>
+            <Link className="btn btn-primary" to={"/login"}>Sign In</Link>
           </div>
         </div>
       </div>
