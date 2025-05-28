@@ -13,11 +13,11 @@ const Register = () => {
 
     createUser(email, password)
       .then((res) => console.log(res))
-      .catch((err) => console.log(err))
+      .catch((err) => console.log(err));
   };
   return (
     <div className="flex-col lg:flex-row-reverse">
-      <div className="card bg-base-100 w-full max-w-sm mx-auto shrink-0 shadow-2xl border-2">
+      <div className="card bg-base-100 mx-auto w-full max-w-sm shrink-0 border-2 shadow-2xl">
         <div className="card-body">
           <h1 className="text-4xl font-semibold">Please Register</h1>
           <form onSubmit={handleRegister} className="fieldset">

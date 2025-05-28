@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaLaptopCode } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const NavBar = () => {
+  const { logOut, user } = useContext(AuthContext);
+
+  const handleLogOutUser = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const navBarLinks = (
     <>
       <NavLink to={"/"}>
@@ -35,8 +46,8 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="bg-base-100 shadow-sm py-4">
-      <div className="navbar w-11/12 mx-auto">
+    <div className="bg-base-100 py-4 shadow-sm">
+      <div className="navbar mx-auto w-11/12">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -69,14 +80,26 @@ const NavBar = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-[16px] space-x-10 items-center">
+          <ul className="menu menu-horizontal items-center space-x-10 px-1 text-[16px]">
             {navBarLinks}
           </ul>
         </div>
         <div className="navbar-end">
           <div className="space-x-5">
-            <Link className="underline" to={"/register"}>Register</Link>
-            <Link className="btn btn-primary" to={"/login"}>Sign In</Link>
+            {user ? (
+              <button onClick={handleLogOutUser} className="btn btn-primary">
+                Sign Out
+              </button>
+            ) : (
+              <>
+                <Link className="underline" to={"/register"}>
+                  Register
+                </Link>
+                <Link className="btn btn-primary" to={"/login"}>
+                  Sign In
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
