@@ -54,6 +54,12 @@ export const router = createBrowserRouter([
         Component: UpdateJob,
       },
       {
+        path: "/jobs/:id",
+        loader: ({params}) => fetch(`http://localhost:3000/jobs/${params.id}`),
+        hydrateFallbackElement: <p>Loading...</p>,
+        Component: JobDetails,
+      },
+      {
         path: "/register",
         Component: Register,
       },
