@@ -11,6 +11,7 @@ import ReviewApplication from "../pages/ReviewApplication";
 import UpdateJob from "../pages/UpdateJob";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import PrivateRouter from "./PrivateRouter";
 
 export const router = createBrowserRouter([
   {
@@ -55,9 +56,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "/jobs/:id",
-        loader: ({params}) => fetch(`http://localhost:3000/jobs/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/jobs/${params.id}`),
         hydrateFallbackElement: <p>Loading...</p>,
-        Component: JobDetails,
+        element: (
+          <PrivateRouter>
+            <JobDetails></JobDetails>
+          </PrivateRouter>
+        ),
       },
       {
         path: "/register",

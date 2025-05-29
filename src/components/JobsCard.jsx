@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router";
 
 const JobsCard = ({ job }) => {
-  console.log(job);
   const {_id, company, company_logo, description, location, requirements } = job;
   return (
     <div className="card bg-base-100 border p-5 shadow-sm">
