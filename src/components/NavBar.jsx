@@ -22,27 +22,28 @@ const NavBar = () => {
       <NavLink to={"/allJobs"}>
         <li>All Jobs</li>
       </NavLink>
-      <NavLink to={"/jobDetails"}>
-        <li>Job Details</li>
-      </NavLink>
-      <NavLink to={"/addJobs"}>
-        <li>Add Jobs</li>
-      </NavLink>
-      <NavLink to={"/applicationPage"}>
-        <li>Application Page</li>
-      </NavLink>
-      <NavLink to={"/myApplication"}>
-        <li>My Applications</li>
-      </NavLink>
-      <NavLink to={"/myJobPost"}>
-        <li>My Job post</li>
-      </NavLink>
-      <NavLink to={"/reviewApplication"}>
-        <li>Review Application</li>
-      </NavLink>
-      <NavLink to={"/updateJob"}>
-        <li>Update Job</li>
-      </NavLink>
+      {user && (
+        <>
+          <NavLink to={"/addJobs"}>
+            <li>Add Jobs</li>
+          </NavLink>
+          <NavLink to={"/applicationPage"}>
+            <li>Application Page</li>
+          </NavLink>
+          <NavLink to={"/myApplication"}>
+            <li>My Applications</li>
+          </NavLink>
+          <NavLink to={"/myJobPost"}>
+            <li>My Job post</li>
+          </NavLink>
+          <NavLink to={"/reviewApplication"}>
+            <li>Review Application</li>
+          </NavLink>
+          <NavLink to={"/updateJob"}>
+            <li>Update Job</li>
+          </NavLink>
+        </>
+      )}
     </>
   );
   return (

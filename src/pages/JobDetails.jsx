@@ -21,6 +21,7 @@ const JobDetails = () => {
       applicant: user.email,
     };
 
+    // post application data
     axios
       .post("http://localhost:3000/applications", application)
       .then((res) => console.log(res.data))
