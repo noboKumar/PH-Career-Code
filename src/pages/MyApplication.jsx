@@ -9,7 +9,7 @@ const MyApplication = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/applications?email=${email}`)
+      .get(`http://localhost:3000/applications?email=${email}`,{withCredentials: true})
       .then((res) => {
         console.log(res.data);
         setMyApplication(res.data);

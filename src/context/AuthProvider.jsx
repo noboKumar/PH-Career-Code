@@ -22,8 +22,12 @@ const AuthProvider = ({ children }) => {
       if (currentUser?.email) {
         const userData = { email: currentUser.email };
         axios
-          .post("http://localhost:3000/jwt", userData)
-          .then((res) => console.log(res.data))
+          .post("http://localhost:3000/jwt", userData, {
+            withCredentials: true,
+          }) 
+          .then((res) => {
+            console.log(res.data);
+          })
           .catch((err) => console.log(err));
       }
     });
