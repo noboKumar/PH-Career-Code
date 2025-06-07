@@ -24,6 +24,7 @@ const AddJobs = () => {
       .split(",")
       .map((res) => res.trim());
     jobData.responsibilities = resClearArray;
+    jobData.poster = user.email; //set a poster value who has posted this job to get my jobs
 
     // post jobs data
     axios
